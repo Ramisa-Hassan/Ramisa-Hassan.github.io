@@ -145,11 +145,60 @@
 
         /* About Section */
         .about-content {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
             font-size: 1.1rem;
             opacity: 0.9;
+            text-align: left;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .profile-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(45deg, #00d4ff, #ff0080);
+            padding: 4px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .profile-placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #2a2a2a, #1a1a1a);
+            border: 4px solid transparent;
+            background-clip: padding-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 2px dashed rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-placeholder:hover {
+            border-color: rgba(0, 212, 255, 0.6);
+            transform: scale(1.05);
         }
 
         /* Projects Section */
@@ -381,6 +430,22 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .profile-photo, .profile-placeholder {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
         }
 
         /* Scroll animations */
@@ -421,9 +486,23 @@
     <section id="about" class="container fade-in">
         <h2>About Me</h2>
         <div class="about-content">
-            <p>I'm a passionate software developer with a love for creating innovative solutions and beautiful user experiences. I specialize in full-stack development and enjoy working with modern technologies to build scalable applications.</p>
-            <br>
-            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+            <div class="about-text">
+                <p>I'm a passionate software developer with a love for creating innovative solutions and beautiful user experiences. I specialize in full-stack development and enjoy working with modern technologies to build scalable applications.</p>
+                <br>
+                <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.</p>
+                <br>
+                <p>I believe in writing clean, efficient code and creating applications that make a real difference in people's lives. My goal is to continuously learn and grow as a developer while building meaningful projects.</p>
+            </div>
+            <div class="about-image">
+                <!-- Replace with your profile photo -->
+                <div class="profile-placeholder">
+                    Add your profile photo here<br>
+                    (250x250px recommended)
+                </div>
+                <!-- Uncomment and use this when you add your photo:
+                <img src="images/profile-photo.jpg" alt="Ramisa Hassan" class="profile-photo">
+                -->
+            </div>
         </div>
     </section>
 
@@ -434,14 +513,11 @@
                 <div class="project-card">
                     <div class="project-image">
                         <!-- Replace with your project image -->
-                        <img src="images/LA.jpg" alt="Project 1">
+                        <span>Add your project screenshot here</span>
                         <!-- <img src="path/to/your/project1-image.jpg" alt="Project 1"> -->
                     </div>
-                    <h3>Crime Forecasting and Trend Analysis for Los Angeles</h3>
-                    <p>Conducted an in-depth analysis of crime trends in Los Angeles using publicly available LAPD crime data. 
-                    Leveraged statistical models and visualization tools to identify high-crime areas, frequent crime types, and seasonal trends. 
-                    Developed predictive models using SARIMAX and PROPHET to forecast potential crime spikes, 
-                    enabling more informed decision-making for city planning and public safety interventions.</p>
+                    <h3>Project One</h3>
+                    <p>A brief description of your project. Explain what it does, the problem it solves, and what makes it special.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Node.js</span>
