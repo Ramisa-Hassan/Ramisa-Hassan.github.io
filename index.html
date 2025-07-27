@@ -604,7 +604,7 @@
 
      <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
-    
+
     <header>
         <nav class="container">
             <div class="logo">Ramisa Hassan</div>
@@ -793,7 +793,7 @@
             <div class="contact-content">
                 <p>I'm always open to discussing new opportunities, collaborations, or just having a chat about technology. Feel free to reach out!</p>
                 <div class="contact-links">
-                    <a href="mailto:ramisa0811@gmail.com" class="contact-link">
+                    <a href="mailto:ramisa0811@gmail.com.com" class="contact-link">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
@@ -824,7 +824,26 @@
         <p>&copy; 2024 Ramisa Hassan. All rights reserved.</p>
     </footer>-->
 
-   <script>
+  <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 1500); // Show loading for 1.5 seconds
+        });
+
+        // Scroll Progress Bar
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
